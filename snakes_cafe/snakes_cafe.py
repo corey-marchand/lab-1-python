@@ -1,7 +1,19 @@
 from textwrap import dedent
 
 items = {
-    "wings" : 0
+    "Wings" : 0,
+    "Cookies" : 0,
+    "Spring Rolls" : 0,
+    "Salmon" : 0,
+    "Steak" : 0,
+    "Meat Tornado" : 0,
+    "A Literal Garden" : 0,
+    "Ice Cream" : 0,
+    "Cake" : 0,
+    "Pie" : 0,
+    "Coffee" : 0,
+    "Tea" : 0,
+    "Unicorn Tears" : 0,
 }
 
 def welcome():
@@ -48,23 +60,26 @@ def show_menu():
 def take_order():
     
     while True:
-
-        prompt = input("""
+        user_prompt = """ 
             ***********************************
             ** What would you like to order? **
             ***********************************
-    """)
+"""
+        dedent_prompt = dedent(user_prompt)
+        
+        prompt = input(dedent_prompt)
+
+        quantity = items["Wings"]
 
         if prompt == 'quit':
             break
         
         if prompt in items: 
-            # pre_amount = items[order]
-            print()
             print(f"** 1 order of {prompt} have been added to your meal **")
-        
-        if prompt in items > 1:
-            print(f"** 1 order of {prompt} have been added to your meal **")
+            quantity += 1
+
+        if quantity in items >= 1:
+            print(f"** 2 order of {prompt} have been added to your meal **")
 
         print(dedent(prompt))
 
