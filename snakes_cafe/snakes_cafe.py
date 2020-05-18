@@ -13,7 +13,7 @@ items = {
     "Pie" : 0,
     "Coffee" : 0,
     "Tea" : 0,
-    "Unicorn Tears" : 0,
+    "Unicorn Tears" : 0
 }
 
 def welcome():
@@ -74,11 +74,13 @@ def take_order():
         if prompt == 'quit':
             break
         
-        if prompt in items: 
+        elif prompt in items: 
             print(f"** 1 order of {prompt} have been added to your meal **")
-            quantity += 1
+        
+            items[prompt] += 1
 
-        if quantity in items >= 1:
+        if quantity >= 1 in items:
+            print("hello")
             print(f"** 2 order of {prompt} have been added to your meal **")
 
         print(dedent(prompt))
